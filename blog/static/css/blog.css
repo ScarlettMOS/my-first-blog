@@ -1,0 +1,19 @@
+h1 a {
+    color: #B5D490;
+    font-family: 'Amatic SC', cursive;
+}
+body {
+    padding-left: 18px;
+}
+p {
+  color: #787777;
+  font-family: 'Amatic SC', cursive;
+}
+.page-header h1 {
+  font-size: 83px;
+}
+.row  {
+  color: #787777;
+  font-family: 'Amatic SC', cursive;
+  font-size: 12 px
+}

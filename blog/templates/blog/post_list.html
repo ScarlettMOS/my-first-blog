@@ -1,22 +1,12 @@
-<html>
-<head>
-     <title>Super-Sahne-Blog</title>
- </head>
-  <body>
-        <div>
-            <h1><a style="color:red" href="">Super-Sahne Blog</a></h1>
-        </div>
-
-        <div>
-            <p>published: 18.11.2017, 15:00</p>
-            <h2><a href="">Erste Sahne-Super-Avocado-Toast</a></h2>
-            <p>Man glaubt es kaum, du siehst aus wie ein kleiner rosa Elefant.</p>
-        </div>
-
-        <div>
-            <p>published: 18.11.2017, 15:00</p>
-            <h2><a href="">Zweite Sahne-Super-Avocado-Toast</a></h2>
-            <p>Nun siehst du aus wie eine kleine lila Erdbeere.</p>
-        </div>
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
+<div class="post">
+  <div class="date">
+      {{ post.published_date }}
+  </div>
+  <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+  <p>{{ post.text|linebreaksbr }}</p>
+</div>
+{% endfor %}
+{% endblock %}
